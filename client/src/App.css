@@ -23,6 +23,7 @@
 
 .App .ace_editor {
   flex: 1;
+  border-right: 1px solid #fff;
 }
 
 .App .output_section {
@@ -40,11 +41,34 @@
 }
 
 button {
-  padding: 5px;
-  margin-top: 15px;
-  margin-left: 6px;
-  margin-bottom: 20px;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+button:hover {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
 }
 
 @media (prefers-reduced-motion: no-preference) {
