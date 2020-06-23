@@ -1,44 +1,56 @@
-.setup_wrapper {
-  display: flex;
-  margin-top: 25px;
-  margin-left: 10px;
-}
-
-.setup_fields {
-  flex: 1;
+.setup {
+  &_wrapper {
+    display: flex;
+    margin-top: 25px;
+    margin-left: 10px;
+  }
+  &_fields {
+    flex: 1;
+  }
 }
 
 .title_wrapper {
   flex: 1;
+  h2 {
+    margin: 0;
+  }
 }
 
-.title_wrapper h2 {
-  margin: 0;
-}
 
 .App {
   margin-top: 25px;
   display: flex;
+  .ace_editor {
+    flex: 1;
+    border-right: 1px solid #fff;
+  }
+  .output_section {
+    flex: 1;
+    background: #000;
+    color: #fff;
+    font-size: 18px;
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  &-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  &-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  &-link {
+    color: #61dafb;
+  }
 }
 
-.App .ace_editor {
-  flex: 1;
-  border-right: 1px solid #fff;
-}
-
-.App .output_section {
-  flex: 1;
-  background: #000;
-  color: #fff;
-  font-size: 18px;
-  padding-left: 5px;
-  padding-top: 5px;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 button {
   color: #fff;
@@ -60,40 +72,26 @@ button {
   -webkit-user-select: none;
   user-select: none;
   margin-left: 43%;
-}
 
-button:hover {
+  &:hover {
     color: #fff;
     background-color: #449d44;
     border-color: #398439;
+  }
 }
 
+
+// responsive css
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
