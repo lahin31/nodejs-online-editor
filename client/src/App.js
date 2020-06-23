@@ -16,45 +16,56 @@ function App() {
   const [fontSize, setFontSize] = useState(18);
   const [loading, setLoading] = useState(false);
   const [options] = useState([{
-    value: 'select_theme',
-    label: 'SelectTheme',
-    disabled: true
-  }, {
-    value: 'solarized_dark',
-    label: 'Solarized Dark'
-  }, {
-    value: 'terminal',
-    label: 'Terminal'
-  }, {
-    value: 'github',
-    label: 'GitHub'
-  }, {
-    value: 'twilight',
-    label: 'Twilight'
-  }]);
+      value: 'select_theme',
+      label: 'Select Theme',
+      disabled: true
+    }, 
+    {  
+      value: 'solarized_dark',
+      label: 'Solarized Dark'
+    }, 
+    {
+      value: 'terminal',
+      label: 'Terminal'
+    }, 
+    {
+      value: 'github',
+      label: 'GitHub'
+    }, 
+    {
+      value: 'twilight',
+      label: 'Twilight'
+    }]);
+
   const [fontSizes] = useState([{
-    value: 'select_theme',
-    label: 'SelectTheme',
-    disabled: true
-  }, {
-    value: 14,
-    label: "14"
-  }, {
-    value: 16,
-    label: "16"
-  }, {
-    value: 18,
-    label: "18"
-  }, {
-    value: 20,
-    label: "20"
-  }, {
-    value: 22,
-    label: "22"
-  }, {
-    value: 24,
-    label: "24"
-  }])
+        value: 'select_theme',
+        label: 'Select Theme',
+        disabled: true
+      }, 
+      {
+        value: 14,
+        label: "14"
+      }, 
+      {
+        value: 16,
+        label: "16"
+      }, 
+      {
+        value: 18,
+        label: "18"
+      }, 
+      {
+        value: 20,
+        label: "20"
+      }, 
+      {
+        value: 22,
+        label: "22"
+      }, 
+      {
+        value: 24,
+        label: "24"
+      }])
 
   const changeTheme = (theme) => {
     setEditorTheme(theme)
@@ -132,7 +143,7 @@ function App() {
           <span>{output}</span>
           <span className="output_loading_text" style={{ display: !loading ? "none" : "block" }}>Loading...</span>
         </div>
-      </div>
+      </div><br />
       <button onClick={proceedCode}>Run Code</button>
     </>
   );
