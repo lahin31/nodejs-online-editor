@@ -45,12 +45,10 @@ button {
   background-color: #5cb85c;
   border-color: #4cae4c;
   display: inline-block;
-  margin-bottom: 0;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  -ms-touch-action: manipulation;
   touch-action: manipulation;
   cursor: pointer;
   background-image: none;
@@ -60,9 +58,8 @@ button {
   line-height: 1.42857143;
   border-radius: 4px;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
+  margin-left: 43%;
 }
 
 button:hover {
