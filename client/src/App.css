@@ -59,13 +59,15 @@ button {
   border-radius: 4px;
   -webkit-user-select: none;
   user-select: none;
-  margin-left: 43%;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 button:hover {
-    color: #fff;
-    background-color: #449d44;
-    border-color: #398439;
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
 }
 
 @media (prefers-reduced-motion: no-preference) {

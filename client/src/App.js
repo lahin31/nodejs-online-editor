@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
-import AceEditor from "react-ace";
-import { Select } from 'element-react'
+import AceEditor from 'react-ace';
+import { Select } from 'element-react';
 
-import "ace-builds/src-noconflict/mode-javascript";
-import "ace-builds/src-noconflict/theme-terminal";
-import "ace-builds/src-noconflict/theme-solarized_dark";
-import "ace-builds/src-noconflict/theme-github";
-import "ace-builds/src-noconflict/theme-twilight";
+import 'ace-builds/src-noconflict/mode-javascript';
+import 'ace-builds/src-noconflict/theme-terminal';
+import 'ace-builds/src-noconflict/theme-solarized_dark';
+import 'ace-builds/src-noconflict/theme-github';
+import 'ace-builds/src-noconflict/theme-twilight';
 
 function App() {
   const [code, setCode] = useState('');
@@ -15,106 +15,124 @@ function App() {
   const [editorTheme, setEditorTheme] = useState('terminal');
   const [fontSize, setFontSize] = useState(18);
   const [loading, setLoading] = useState(false);
-  const [options] = useState([{
+  const [options] = useState([
+    {
       value: 'select_theme',
       label: 'Select Theme',
-      disabled: true
-    }, 
-    {  
+      disabled: true,
+    },
+    {
       value: 'solarized_dark',
-      label: 'Solarized Dark'
-    }, 
+      label: 'Solarized Dark',
+    },
     {
       value: 'terminal',
-      label: 'Terminal'
-    }, 
+      label: 'Terminal',
+    },
     {
       value: 'github',
-      label: 'GitHub'
-    }, 
+      label: 'GitHub',
+    },
     {
       value: 'twilight',
-      label: 'Twilight'
-    }]);
+      label: 'Twilight',
+    },
+  ]);
 
-  const [fontSizes] = useState([{
-        value: 'select_theme',
-        label: 'Select Theme',
-        disabled: true
-      }, 
-      {
-        value: 14,
-        label: "14"
-      }, 
-      {
-        value: 16,
-        label: "16"
-      }, 
-      {
-        value: 18,
-        label: "18"
-      }, 
-      {
-        value: 20,
-        label: "20"
-      }, 
-      {
-        value: 22,
-        label: "22"
-      }, 
-      {
-        value: 24,
-        label: "24"
-      }])
+  const [fontSizes] = useState([
+    {
+      value: 'select_theme',
+      label: 'Select Theme',
+      disabled: true,
+    },
+    {
+      value: 14,
+      label: '14',
+    },
+    {
+      value: 16,
+      label: '16',
+    },
+    {
+      value: 18,
+      label: '18',
+    },
+    {
+      value: 20,
+      label: '20',
+    },
+    {
+      value: 22,
+      label: '22',
+    },
+    {
+      value: 24,
+      label: '24',
+    },
+  ]);
 
   const changeTheme = (theme) => {
-    setEditorTheme(theme)
-  }
+    setEditorTheme(theme);
+  };
 
   const changeFontSize = (font) => {
     setFontSize(font);
-  }
+  };
 
   const handleCodeChange = (code) => {
-    setCode(code)
-  }
+    setCode(code);
+  };
 
   const proceedCode = () => {
     setOutput(null);
     setLoading(true);
-    fetch("/run", {
-      method: "POST",
+    fetch(`/run`, {
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         script: code,
-        lang: "nodejs"
+        lang: 'nodejs',
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        setLoading(false);
+        setOutput(res.runResult.output);
       })
-    })
-    .then(res => res.json())
-    .then(res => {
-      setLoading(false)
-      setOutput(res.runResult.output);
-    })
-    .catch(err => console.log(err))
-  }
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
       <div className="setup_wrapper">
         <div className="setup_fields">
           <Select value={editorTheme} onChange={changeTheme}>
-            {
-              options.map(el => {
-                return <Select.Option key={el.value}  label={el.label} value={el.value} disabled={el.disabled} />
-              })
-            }
+            {options.map((el) => {
+              return (
+                <Select.Option
+                  key={el.value}
+                  label={el.label}
+                  value={el.value}
+                  disabled={el.disabled}
+                />
+              );
+            })}
           </Select>
-          <Select value={fontSize} onChange={changeFontSize} style={{ marginLeft: "5px"}}>
-            {
-              fontSizes.map(el => {
-                return <Select.Option key={el.value} label={el.label} value={el.value} disabled={el.disabled} />
-              })
-            }
+          <Select
+            value={fontSize}
+            onChange={changeFontSize}
+            style={{ marginLeft: '5px' }}
+          >
+            {fontSizes.map((el) => {
+              return (
+                <Select.Option
+                  key={el.value}
+                  label={el.label}
+                  value={el.value}
+                  disabled={el.disabled}
+                />
+              );
+            })}
           </Select>
         </div>
         <div className="title_wrapper">
@@ -141,9 +159,14 @@ function App() {
         <div className="output_section">
           Output is: <br />
           <span>{output}</span>
-          <span className="output_loading_text" style={{ display: !loading ? "none" : "block" }}>Loading...</span>
+          <span
+            className="output_loading_text"
+            style={{ display: !loading ? 'none' : 'block' }}
+          >
+            Loading...
+          </span>
         </div>
-      </div><br />
+      </div>
       <button onClick={proceedCode}>Run Code</button>
     </>
   );

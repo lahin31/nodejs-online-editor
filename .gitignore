@@ -8,6 +8,8 @@
 # environments variables
 .env
 
+Procfile
+
 # testing
 /coverage
 
