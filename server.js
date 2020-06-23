@@ -4,13 +4,15 @@ const routes = require('./routes/routes');
 const path = require('path');
 const cors = require('cors');
 
-// enabling .env
-require("dotenv").config();
-
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/", routes);
+
+if (process.env.NODE_ENV !== 'production') { 
+	//enabling .env
+	require('dotenv').config();
+}
 
 if(process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
@@ -20,4 +22,4 @@ if(process.env.NODE_ENV === 'production') {
 	})
 }
 
-app.listen(process.env.port || 5000);
+app.listen(process.env.port || 4000);
