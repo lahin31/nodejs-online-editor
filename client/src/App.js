@@ -107,7 +107,7 @@ function App() {
           </Select>
         </div>
         <div className="title_wrapper">
-          <h2>NodeJS REPL</h2>
+          <h2>NodeJS Online Editor</h2>
         </div>
       </div>
       <div className="App">
