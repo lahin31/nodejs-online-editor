@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import AceEditor from 'react-ace';
 import { Select } from 'element-react';
 

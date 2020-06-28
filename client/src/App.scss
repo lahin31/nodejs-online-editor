@@ -1,0 +1,98 @@
+.setup{
+  &_wrapper {
+    display: flex;
+    margin-top: 25px;
+    margin-left: 10px;
+  }
+  &_fields {
+    flex: 1;
+  }
+}
+
+.App {
+  margin-top: 25px;
+  display: flex;
+  .ace_editor {
+    flex: 1;
+    border-right: 1px solid #fff;
+  }
+  .output_section {
+    flex: 1;
+    background: #000;
+    color: #fff;
+    font-size: 18px;
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  &-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  &-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  &-link {
+    color: #61dafb;
+  }
+}
+
+
+button {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  user-select: none;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  &:hover {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+  }
+}
+
+.title_wrapper {
+  flex: 1;
+  h2 {
+    margin: 0;
+  }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
