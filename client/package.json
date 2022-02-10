@@ -9,7 +9,7 @@
     "ace-builds": "^1.4.11",
     "element-react": "^1.4.34",
     "element-theme-default": "^1.4.13",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-ace": "^9.0.0",
     "react-dom": "^16.13.1",
